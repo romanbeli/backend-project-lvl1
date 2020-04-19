@@ -17,6 +17,6 @@ const isItEven = () => {
       return console.log(`Correct!\nCongratulations, ${name}!`);
     } console.log('Correct!');
   }
-  return console.log('nothing to return');
+  return console.log('nothing to returnnn');
 };
 export default isItEven;
