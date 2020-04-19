@@ -1,7 +1,7 @@
-import getName from './index.js';
 import readlines from 'readline-sync';
+import getName from './index.js';
 
-const random = () => Math.floor(Math.random() * Math.floor(111));
+const random = () => Math.floor(Math.random() * 1111);
 
 const isItEven = () => {
   const name = getName();
@@ -13,10 +13,10 @@ const isItEven = () => {
     const actualAnswer = readlines.question('Your answer: ');
     if ((checkEven === 0 && actualAnswer !== 'yes') || (checkEven !== 0 && actualAnswer !== 'no')) {
       return console.log(`Let's try again, ${name}!`);
-    } else if (count === 3) {
+    } if (count === 3) {
       return console.log(`Correct!\nCongratulations, ${name}!`);
     } console.log('Correct!');
   }
-  return console.log('nothing to returnnn');
+  return true; // ???????????? did it just for linter
 };
 export default isItEven;
