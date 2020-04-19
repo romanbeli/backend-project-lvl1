@@ -4,7 +4,7 @@ env:
   node: true
   jest: true
 extends:
-  -  'eslint:recommended'
+  - 'eslint:recommended'
   - 'airbnb-base'
   - 'plugin:jest/recommended'
 globals:
@@ -19,3 +19,4 @@ rules:
 plugins:
   - jest
   - babel
+parser: babel-eslint
