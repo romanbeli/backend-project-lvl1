@@ -1,5 +1,5 @@
 # backend-project-lvl1
-<a href="https://codeclimate.com/github/romanbeli/backend-project-lvl1"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a> <a href="https://github.com/romanbeli/backend-project-lvl1/actions"><img src="https://github.com/romanbeli/backend-project-lvl1/workflows/CI/badge.svg" /></a> 
+[![Maintainability](https://api.codeclimate.com/v1/badges/972ca6bed1b0389c1386/maintainability)](https://codeclimate.com/github/romanbeli/backend-project-lvl1/maintainability)</a> <a href="https://github.com/romanbeli/backend-project-lvl1/actions"><img src="https://github.com/romanbeli/backend-project-lvl1/workflows/CI/badge.svg" /></a> 
 
 brain-calc:
 <a href="https://asciinema.org/a/mz1NE8JK17aNuwxrXnz90qz5G" target="_blank"><img src="https://asciinema.org/a/mz1NE8JK17aNuwxrXnz90qz5G.svg" /></a>
