@@ -24,7 +24,7 @@ const prime = (gameInstruction) => {
     console.log(`Question: ${num}`);
     console.log(correctAnswer);
     const userAnswer = getInfoFromUser('Answer: ');
-    if (correctAnswer !== userAnswer) return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+    if (correctAnswer !== userAnswer) return console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"\nLet's try again, ${name}!`);
     if (count === 3) return console.log(`Correct!\nCongratulations, ${name}!`);
     console.log('Correct!');
   }

@@ -27,8 +27,9 @@ const gcd = (gameInstruction) => {
     console.log(`Question: ${a} ${b}`);
     const actualGCD = getGCD(a, b);
     console.log(actualGCD);
-    const answearGCD = Number(getInfoFromUser('Your answer: '));
-    if (actualGCD !== answearGCD) return console.log(`"${answearGCD}" is wrong answer ;(. Correct answer was "${actualGCD}"`);
+    const stringAnswerGCD = (getInfoFromUser('Your answer: '));
+    const answearGCD = Number(stringAnswerGCD);
+    if (actualGCD !== answearGCD) return console.log(`"${stringAnswerGCD}" is wrong answer ;(. Correct answer was "${actualGCD}"\nLet's try again, ${name}!`);
     if (iter === 3) return console.log(`Correct!\nCongratulations, ${name}!`);
     console.log('Correct!');
   }

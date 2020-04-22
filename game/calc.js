@@ -19,10 +19,11 @@ const calc = (gameInstruction) => {
     console.log(randomExpression);
     const randomExpressionForDisplay = expressionForDisplay[randomArrIndex];
     console.log(`Question: ${randomExpressionForDisplay}`);
-    const answer = Number(getInfoFromUser('Your answer: '));
+    const stringAnswer = (getInfoFromUser('Your answer: '));
+    const answer = Number(stringAnswer);
     console.log(answer);
     if (randomExpression !== answer) {
-      return console.log(`"${answer}" is wrong answer ;(. Correct answer was "${randomExpression}"\nLet's try again, ${name}!`);
+      return console.log(`"${stringAnswer}" is wrong answer ;(. Correct answer was "${randomExpression}"\nLet's try again, ${name}!`);
     } if (count === 3) {
       return console.log(`Correct!\nCongratulations, ${name}!`);
     } console.log('Correct!');

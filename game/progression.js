@@ -26,8 +26,9 @@ const progression = (gameInstruction) => {
     console.log(`Question: ${cutArr}`);
     const deletedElem = uncutArr[index];
     console.log(deletedElem);
-    const answear = Number(getInfoFromUser('Your answer: '));
-    if (deletedElem !== answear) return console.log(`"${answear}" is wrong answer ;(. Correct answer was "${deletedElem}"`);
+    const stringAnswer = getInfoFromUser('Your answer: ');
+    const answear = Number(stringAnswer);
+    if (deletedElem !== answear) return console.log(`"${stringAnswer}" is wrong answer ;(. Correct answer was "${deletedElem}"\nLet's try again, ${name}!`);
     if (count === 3) return console.log(`Correct!\nCongratulations, ${name}!`);
     console.log('Correct!');
   }
