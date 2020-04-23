@@ -1,4 +1,7 @@
 #!/usr/bin/env node
-import { getName } from '../src/index.js';
+import { getInfoFromUser } from '../src/index.js';
 
-getName('');
+console.log('Welcome to the Brain Games!');
+const frase = 'May I have your name? ';
+const name = getInfoFromUser(frase);
+console.log(`Hello, ${name}!`);

@@ -1,37 +1,23 @@
-import { getName, random, getInfoFromUser } from '../src/index.js';
+import { random, getInfoFromUser } from '../src/index.js';
 
-const progression = (gameInstruction) => {
-  const name = getName(gameInstruction);
-
-  const whollArr = (maxFirsElem, length) => {
-    const firstElem = random(maxFirsElem);
-    const step = random(maxFirsElem);
-    const resaultArr = [firstElem];
-    for (let index = 1; index < length; index += 1) {
-      resaultArr[index] = resaultArr[index - 1] + step;
-    }
-    return resaultArr;
-  };
-  const prepArr = (fullArr, delitingIndex) => {
-    const arr = [...fullArr];
-    arr[delitingIndex] = '..';
-    return arr;
-  };
+const progression = () => {
   const lengthArr = 10;
-  const maxFirsElemArr = 99;
-  for (let count = 1; count < 4; count += 1) {
-    const uncutArr = whollArr(maxFirsElemArr, lengthArr);
-    const index = random(lengthArr);
-    const cutArr = prepArr(uncutArr, index);
-    console.log(`Question: ${cutArr}`);
-    const deletedElem = uncutArr[index];
-    console.log(deletedElem);
-    const stringAnswer = getInfoFromUser('Your answer: ');
-    const answear = Number(stringAnswer);
-    if (deletedElem !== answear) return console.log(`"${stringAnswer}" is wrong answer ;(. Correct answer was "${deletedElem}"\nLet's try again, ${name}!`);
-    if (count === 3) return console.log(`Correct!\nCongratulations, ${name}!`);
-    console.log('Correct!');
+  const maxFirsElem = 99;
+  const firstElem = random(maxFirsElem);
+  const step = random(maxFirsElem);
+  const resaultArr = [firstElem];
+  for (let index = 1; index < lengthArr; index += 1) {
+    resaultArr[index] = resaultArr[index - 1] + step;
   }
-  return true;
+  const delitingIndex = random(lengthArr);
+  const prepArr = [...resaultArr];
+  prepArr[delitingIndex] = '..';
+  const correctAnswer = resaultArr[delitingIndex];
+  console.log(correctAnswer);
+  console.log(`Question: ${prepArr}`);
+  const stringUserAnswer = getInfoFromUser('Your answer: ');
+  const numericUserAnswer = Number(stringUserAnswer);
+  const resaultStructure = [correctAnswer, numericUserAnswer, stringUserAnswer, prepArr];
+  return resaultStructure;
 };
 export default progression;
