@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import isItEven from '../game/even.js';
+import isItEven from '../src/games/even.js';
+import { gameFlow } from '../src/index.js';
 
-isItEven('Answer "yes" if the number is even, otherwise answer "no".');
+const gameInstruction = 'Answer "yes" if the number is even, otherwise answer "no".';
+gameFlow(isItEven, gameInstruction);

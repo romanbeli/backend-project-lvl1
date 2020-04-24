@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import calc from '../game/calc.js';
+import { gameFlow } from '../src/index.js';
+import calc from '../src/games/calc.js';
 
-calc('What is the result of the expression?');
+const gameInstruction = 'What is the result of the expression?';
+gameFlow(calc, gameInstruction);

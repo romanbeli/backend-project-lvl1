@@ -1,4 +1,4 @@
-import { random, getInfoFromUser } from '../src/index.js';
+import { random, getInfoFromUser } from '../index.js';
 
 const progression = () => {
   const lengthArr = 10;
@@ -17,7 +17,7 @@ const progression = () => {
   console.log(`Question: ${prepArr}`);
   const stringUserAnswer = getInfoFromUser('Your answer: ');
   const numericUserAnswer = Number(stringUserAnswer);
-  const resaultStructure = [correctAnswer, numericUserAnswer, stringUserAnswer, prepArr];
+  const resaultStructure = [correctAnswer, numericUserAnswer, stringUserAnswer];
   return resaultStructure;
 };
 export default progression;

@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import gcd from '../game/gcd.js';
+import gcd from '../src/games/gcd.js';
+import { gameFlow } from '../src/index.js';
 
-gcd('Find the greatest common divisor of given numbers.');
+const gameInstruction = 'Find the greatest common divisor of given numbers.';
+gameFlow(gcd, gameInstruction);
