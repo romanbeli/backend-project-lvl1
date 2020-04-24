@@ -1,6 +1,6 @@
 import { random } from '../index.js';
 
-const calc = () => {
+const calculateExpression = () => {
   const operandLimit = 99;
   const a = random(operandLimit);
   const b = random(operandLimit);
@@ -14,4 +14,4 @@ const calc = () => {
   const dataArr = [randomExpression, randomExpressionForDisplay];
   return dataArr;
 };
-export default calc;
+export default calculateExpression;

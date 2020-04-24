@@ -3,7 +3,7 @@ import readlineSyn from 'readline-sync';
 const getInfoFromUser = (frase) => readlineSyn.question(`${frase}`);
 const random = (limit) => Math.floor(Math.random() * limit);
 
-const gameFlow = (gameFunction, gameInstruction) => {
+const gameExecute = (gameFunction, gameInstruction) => {
   console.log('Welcome to the Brain Games!');
   const name = getInfoFromUser('May I have your name? ');
   console.log(`Hello, ${name}!`);
@@ -11,7 +11,7 @@ const gameFlow = (gameFunction, gameInstruction) => {
   //
   for (let count = 1; count < 4; count += 1) {
     const dataArr = gameFunction();
-    console.log(`Question: ${dataArr[3]}`);
+    console.log(`Question: ${dataArr[1]}`);
     let numericAnswer;
     const stringAnswer = getInfoFromUser('Your answer: ');
     if (`${Number(stringAnswer)}` === 'NaN') numericAnswer = stringAnswer;
@@ -22,4 +22,4 @@ const gameFlow = (gameFunction, gameInstruction) => {
   }
   return true;
 };
-export { random, getInfoFromUser, gameFlow };
+export { random, getInfoFromUser, gameExecute };

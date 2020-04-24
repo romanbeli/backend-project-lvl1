@@ -1,6 +1,6 @@
 import { random } from '../index.js';
 
-const prime = () => {
+const checkForPrime = () => {
   const limit = 27;
   const num = random(limit);
   let correctAnswer;
@@ -19,4 +19,4 @@ const prime = () => {
   const dataArr = [correctAnswer, num];
   return dataArr;
 };
-export default prime;
+export default checkForPrime;

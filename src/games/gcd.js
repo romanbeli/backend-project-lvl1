@@ -1,6 +1,6 @@
 import { random } from '../index.js';
 
-const gcd = () => {
+const calculateGCD = () => {
   const limit = 100;
   const a = random(limit);
   const b = random(limit);
@@ -28,4 +28,4 @@ const gcd = () => {
   const dataArr = [correctGCD, question];
   return dataArr;
 };
-export default gcd;
+export default calculateGCD;

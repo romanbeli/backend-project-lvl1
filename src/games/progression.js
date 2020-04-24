@@ -1,6 +1,6 @@
 import { random } from '../index.js';
 
-const progression = () => {
+const repairProgression = () => {
   const lengthArr = 10;
   const maxFirsElem = 99;
   const firstElem = random(maxFirsElem);
@@ -17,4 +17,4 @@ const progression = () => {
   const resaultStructure = [correctAnswer, prepArr];
   return resaultStructure;
 };
-export default progression;
+export default repairProgression;
