@@ -6,8 +6,7 @@ const calculateExpression = () => {
   const b = random(operandLimit);
   const availableExpressions = [a + b, a - b, a * b];
   const expressionsForDisplay = [`${a} + ${b}`, `${a} - ${b}`, `${a} * ${b}`];
-  const arrIndexLimit = availableExpressions.length;
-  const randomArrIndex = random(arrIndexLimit);
+  const randomArrIndex = random(availableExpressions.length);
   const randomExpression = availableExpressions[randomArrIndex];
   console.log(randomExpression);
   const randomExpressionForDisplay = expressionsForDisplay[randomArrIndex];
