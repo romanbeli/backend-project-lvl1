@@ -1,4 +1,4 @@
-import { random, getInfoFromUser } from '../index.js';
+import { random } from '../index.js';
 
 const gcd = () => {
   const limit = 100;
@@ -6,7 +6,7 @@ const gcd = () => {
   const b = random(limit);
   let min;
   let max;
-  if (a === b) return a; //
+  if (a === b) return a;
   if (a > b) {
     min = b;
     max = a;
@@ -23,11 +23,9 @@ const gcd = () => {
       break;
     }
   }
-  console.log(`Question: ${a} ${b}`);
+  const question = `${a} ${b}`;
   console.log(correctGCD);
-  const stringAnswerGCD = (getInfoFromUser('Your answer: '));
-  const numericAnswear = Number(stringAnswerGCD);
-  const dataArr = [correctGCD, numericAnswear, stringAnswerGCD];
+  const dataArr = [correctGCD, question];
   return dataArr;
 };
 export default gcd;

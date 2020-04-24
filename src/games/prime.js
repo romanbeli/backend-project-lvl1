@@ -1,4 +1,4 @@
-import { random, getInfoFromUser } from '../index.js';
+import { random } from '../index.js';
 
 const prime = () => {
   const limit = 27;
@@ -15,10 +15,8 @@ const prime = () => {
       break;
     }
   }
-  console.log(`Question: ${num}`);
   console.log(correctAnswer);
-  const userAnswer = getInfoFromUser('Answer: ');
-  const dataArr = [correctAnswer, userAnswer, userAnswer];
+  const dataArr = [correctAnswer, num];
   return dataArr;
 };
 export default prime;

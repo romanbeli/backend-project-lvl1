@@ -1,4 +1,4 @@
-import { random, getInfoFromUser } from '../index.js';
+import { random } from '../index.js';
 
 const isItEven = () => {
   let correctAnsewr = '';
@@ -7,9 +7,7 @@ const isItEven = () => {
   const diviseResault = randomNum % 2;
   if (diviseResault === 0) correctAnsewr = 'yes';
   if (diviseResault !== 0) correctAnsewr = 'no';
-  console.log(`Question: ${randomNum}`);
-  const stringAnswer = getInfoFromUser('Your answer: ');
-  const dataArr = [correctAnsewr, stringAnswer, stringAnswer, randomNum];
+  const dataArr = [correctAnsewr, randomNum];
   return dataArr;
 };
 export default isItEven;

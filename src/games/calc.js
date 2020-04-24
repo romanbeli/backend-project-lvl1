@@ -1,4 +1,4 @@
-import { random, getInfoFromUser } from '../index.js';
+import { random } from '../index.js';
 
 const calc = () => {
   const operandLimit = 99;
@@ -11,11 +11,7 @@ const calc = () => {
   const randomExpression = availableExpressions[randomArrIndex];
   console.log(randomExpression);
   const randomExpressionForDisplay = expressionsForDisplay[randomArrIndex];
-  console.log(`Question: ${randomExpressionForDisplay}`);
-  const stringAnswer = (getInfoFromUser('Your answer: '));
-  const numericAnswer = Number(stringAnswer);
-  console.log(numericAnswer);
-  const dataArr = [randomExpression, numericAnswer, stringAnswer];
+  const dataArr = [randomExpression, randomExpressionForDisplay];
   return dataArr;
 };
 export default calc;
