@@ -1,5 +1,5 @@
 import readlineSyn from 'readline-sync';
-//
+
 const getInfoFromUser = (frase) => readlineSyn.question(`${frase}`);
 const random = (limit) => Math.floor(Math.random() * limit);
 
@@ -8,16 +8,17 @@ const gameExecute = (correct, question, gameInstruction) => {
   const name = getInfoFromUser('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameInstruction);
-  //
-  for (let count = 1; count < 4; count += 1) {
-    // const dataArr = gameFunction();
-    console.log(`Question: ${question}`);
-    let numericAnswer;
+  const count = correct.length;
+  for (let i = 0; i < count; i += 1) {
+    // const showQuestion = question[i];
+    console.log(`Question: ${question[i]}`);
+    console.log(correct[i]);
     const stringAnswer = getInfoFromUser('Your answer: ');
-    if (`${Number(stringAnswer)}` === 'NaN') numericAnswer = stringAnswer;
-    if (`${Number(stringAnswer)}` !== 'NaN') numericAnswer = Number(stringAnswer);
-    if (correct !== numericAnswer) return console.log(`"${stringAnswer}" is wrong answer ;(. Correct answer was "${correct}"\nLet's try again, ${name}!`);
-    if (count === 3) return console.log(`Correct!\nCongratulations, ${name}!`);
+    // if (`${Number(stringAnswer)}` === 'NaN') numericAnswer = stringAnswer;
+    // if (`${Number(stringAnswer)}` !== 'NaN') numericAnswer = Number(stringAnswer);
+    const userAnswer = (Number.isNaN(Number(stringAnswer))) ? stringAnswer : Number(stringAnswer);
+    if (correct[i] !== userAnswer) return console.log(`"${stringAnswer}" is wrong answer ;(. Correct answer was "${correct[i]}"\nLet's try again, ${name}!`);
+    if (i === count - 1) return console.log(`Correct!\nCongratulations, ${name}!`);
     console.log('Correct!');
   }
   return true;
