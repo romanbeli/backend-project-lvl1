@@ -9,12 +9,11 @@ const playGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const a = getRandom(operandLimit);
     const b = getRandom(operandLimit);
-    const availableExpressions = [a + b, a - b, a * b];
-    const expressionsForDisplay = [`${a} + ${b}`, `${a} - ${b}`, `${a} * ${b}`];
-    const randomArrIndex = getRandom(availableExpressions.length);
-    const resaulOfExpression = String(availableExpressions[randomArrIndex]);
-    const expressionForQestion = expressionsForDisplay[randomArrIndex];
-    raunds[i] = [resaulOfExpression, expressionForQestion];
+    const expressions = [[a + b, `${a} + ${b}`], [a - b, `${a} - ${b}`], [a * b, `${a} * ${b}`]];
+    const randomArrIndex = getRandom(expressions.length);
+    const [resaulOfExpression, expressionForQestion] = expressions[randomArrIndex];
+    const typedResaulOfExpression = String(resaulOfExpression);
+    raunds[i] = [typedResaulOfExpression, expressionForQestion];
   }
   gameExecuting(raunds, gameInstruction);
 };
