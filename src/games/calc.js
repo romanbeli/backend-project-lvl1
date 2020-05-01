@@ -1,21 +1,21 @@
-import { random, gameExecute } from '../index.js';
+import gameExecuting from '../index.js';
+import getRandom from '../utils.js';
 
-const calculateExpression = () => {
-  const operandLimit = 99;
-  const arrayOfAnswer = [];
-  const arrayOfQestion = [];
-  const gameInstruction = 'What is the result of the expression?';
+const gameInstruction = 'What is the result of the expression?';
+
+const playGame = () => {
+  const operandLimit = 9;
+  const raunds = [];
   for (let i = 0; i < 3; i += 1) {
-    const a = random(operandLimit);
-    const b = random(operandLimit);
+    const a = getRandom(operandLimit);
+    const b = getRandom(operandLimit);
     const availableExpressions = [a + b, a - b, a * b];
     const expressionsForDisplay = [`${a} + ${b}`, `${a} - ${b}`, `${a} * ${b}`];
-    const randomArrIndex = random(availableExpressions.length);
-    const resaulOfExpression = availableExpressions[randomArrIndex];
+    const randomArrIndex = getRandom(availableExpressions.length);
+    const resaulOfExpression = String(availableExpressions[randomArrIndex]);
     const expressionForQestion = expressionsForDisplay[randomArrIndex];
-    arrayOfAnswer[i] = resaulOfExpression;
-    arrayOfQestion[i] = expressionForQestion;
+    raunds[i] = [resaulOfExpression, expressionForQestion];
   }
-  gameExecute(arrayOfAnswer, arrayOfQestion, gameInstruction);
+  gameExecuting(raunds, gameInstruction);
 };
-export default calculateExpression;
+export default playGame;

@@ -1,25 +1,30 @@
-import { random, gameExecute } from '../index.js';
+import gameExecuting from '../index.js';
+import getRandom from '../utils.js';
 
-const repairProgression = () => {
-  const gameInstruction = 'What number is missing in the progression?';
-  const lengthArr = 10;
-  const maxFirsElem = 99;
-  const arrayOfAnswer = [];
-  const arrayOfQuestion = [];
-  for (let i = 0; i < 3; i += 1) {
-    const firstElem = random(maxFirsElem);
-    const step = random(maxFirsElem);
-    const resaultArr = [firstElem];
-    for (let index = 1; index < lengthArr; index += 1) {
-      resaultArr[index] = resaultArr[index - 1] + step;
-    }
-    const delitingIndex = random(lengthArr);
-    const prepArr = [...resaultArr];
-    prepArr[delitingIndex] = '..';
-    const correctAnswer = resaultArr[delitingIndex];
-    arrayOfAnswer[i] = correctAnswer;
-    arrayOfQuestion[i] = prepArr;
+const gameInstruction = 'What number is missing in the progression?';
+const lengthArr = 10;
+const maxFirsElem = 9;
+
+const generateProgression = (firstElem, step) => {
+  const resaultArr = [firstElem];
+  for (let index = 1; index < lengthArr; index += 1) {
+    resaultArr[index] = resaultArr[index - 1] + step;
   }
-  gameExecute(arrayOfAnswer, arrayOfQuestion, gameInstruction);
+  return resaultArr;
 };
-export default repairProgression;
+
+const playGame = () => {
+  const raunds = [];
+  for (let i = 0; i < 3; i += 1) {
+    const firstElem = getRandom(maxFirsElem);
+    const step = getRandom(maxFirsElem);
+    const delitingIndex = getRandom(lengthArr);
+    const progression = generateProgression(firstElem, step);
+    const prepArr = [...progression];
+    prepArr[delitingIndex] = '..';
+    const correctAnswer = String(progression[delitingIndex]);
+    raunds[i] = [correctAnswer, prepArr];
+  }
+  gameExecuting(raunds, gameInstruction);
+};
+export default playGame;
