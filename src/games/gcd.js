@@ -1,8 +1,9 @@
-import gameExecuting from '../index.js';
-import getRandom from '../utils.js';
+import executeGame from '../index.js';
+import generateNum from '../utils.js';
 
 const gameInstruction = 'Find the greatest common divisor of given numbers.';
-const getGCD = (a, b) => {
+
+const calculateGCD = (a, b) => {
   let gcd;
   if (a === b) gcd = a;
   let min;
@@ -15,9 +16,9 @@ const getGCD = (a, b) => {
     max = b;
   }
   for (let count = min; count > 0; count -= 1) {
-    const diviseResoultMin = min % count;
-    const diviseResoultMax = max % count;
-    if (diviseResoultMax === 0 && diviseResoultMin === 0) {
+    const divisionResultMin = min % count;
+    const divisionResultMax = max % count;
+    if (divisionResultMax === 0 && divisionResultMin === 0) {
       gcd = count;
       break;
     }
@@ -25,15 +26,18 @@ const getGCD = (a, b) => {
   return gcd;
 };
 const playGame = () => {
-  const limit = 22;
-  const raunds = [];
+  const downLimit = 1;
+  const upLimit = 22;
+  const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    const a = getRandom(limit) + 1;
-    const b = getRandom(limit) + 1;
-    const gcd = String(getGCD(a, b));
+    const a = generateNum(downLimit, upLimit);
+    const b = generateNum(downLimit, upLimit);
+    const correctAnswer = String(calculateGCD(a, b));
     const question = `${a} ${b}`;
-    raunds[i] = [gcd, question];
+    rounds[i] = [correctAnswer, question];
   }
-  gameExecuting(raunds, gameInstruction);
+  return rounds;
 };
-export default playGame;
+const rounds = playGame();
+
+export default () => executeGame(rounds, gameInstruction);

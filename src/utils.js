@@ -1,2 +1,1 @@
-const getRandom = (limit) => Math.floor(Math.random() * limit);
-export default getRandom;
+export default (downLimit, upLim) => Math.floor(Math.random() * (upLim - downLimit)) + downLimit;
