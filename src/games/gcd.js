@@ -1,5 +1,5 @@
 import executeGame from '../index.js';
-import generateNum from '../utils.js';
+import { generateNum } from '../utils.js';
 
 const gameInstruction = 'Find the greatest common divisor of given numbers.';
 
@@ -20,24 +20,26 @@ const calculateGCD = (a, b) => {
     const divisionResultMax = max % count;
     if (divisionResultMax === 0 && divisionResultMin === 0) {
       gcd = count;
-      break;
+      return gcd;
     }
   }
   return gcd;
 };
-const playGame = () => {
-  const downLimit = 1;
-  const upLimit = 22;
+
+const generateRounds = () => {
+  const min = 1;
+  const max = 22;
   const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    const a = generateNum(downLimit, upLimit);
-    const b = generateNum(downLimit, upLimit);
+    const a = generateNum(min, max);
+    const b = generateNum(min, max);
     const correctAnswer = String(calculateGCD(a, b));
     const question = `${a} ${b}`;
-    rounds[i] = [correctAnswer, question];
+    rounds.push([correctAnswer, question]);
   }
   return rounds;
 };
-const rounds = playGame();
+
+const rounds = generateRounds();
 
 export default () => executeGame(rounds, gameInstruction);

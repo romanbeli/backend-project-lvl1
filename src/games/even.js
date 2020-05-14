@@ -1,21 +1,22 @@
 import executeGame from '../index.js';
-import generateNum from '../utils.js';
+import { generateNum } from '../utils.js';
 
 const gameInstruction = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => (num % 2) === 0;
 
 const generateRounds = () => {
-  const downLimit = 0;
-  const upLimit = 22;
-  const raunds = [];
+  const min = 0;
+  const max = 22;
+  const rounds = [];
   for (let i = 0; i < 3; i += 1) {
-    const question = generateNum(downLimit, upLimit);
+    const question = generateNum(min, max);
     const correctAnsewr = isEven(question) ? 'yes' : 'no';
-    raunds[i] = [correctAnsewr, question];
+    rounds.push([correctAnsewr, question]);
   }
-  return raunds;
+  return rounds;
 };
+
 const rounds = generateRounds();
 
 export default () => executeGame(rounds, gameInstruction);

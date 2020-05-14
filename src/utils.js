@@ -1,1 +1,2 @@
-export default (downLimit, upLim) => Math.floor(Math.random() * (upLim - downLimit)) + downLimit;
+const generateNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+export { generateNum };
