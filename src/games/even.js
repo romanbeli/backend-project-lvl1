@@ -8,7 +8,9 @@ const isEven = (num) => (num % 2) === 0;
 const generateRounds = () => {
   const min = 0;
   const max = 22;
+
   const rounds = [];
+
   for (let i = 0; i < 3; i += 1) {
     const question = generateNum(min, max);
     const correctAnsewr = isEven(question) ? 'yes' : 'no';

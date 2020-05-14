@@ -7,11 +7,14 @@ export default (rounds, gameInstruction) => {
   const name = getInfoFromUser('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(gameInstruction);
+
   const count = rounds.length;
   for (let i = 0; i < count; i += 1) {
     const [correctAnswer, question] = rounds[i];
+
     console.log(`Question: ${question}`);
     const userAnswer = getInfoFromUser('Your answer: ');
+
     if (correctAnswer !== userAnswer) {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
       console.log(`Let's try again, ${name}!`);
