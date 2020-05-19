@@ -1,4 +1,4 @@
-import executeGame from '../index.js';
+import executeGame, { numOfRounds } from '../index.js';
 import { generateNum } from '../utils.js';
 
 const gameInstruction = 'Answer "yes" if the number is even, otherwise answer "no".';
@@ -11,7 +11,7 @@ const generateRounds = () => {
 
   const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numOfRounds; i += 1) {
     const question = generateNum(min, max);
     const correctAnsewr = isEven(question) ? 'yes' : 'no';
     rounds.push([correctAnsewr, question]);

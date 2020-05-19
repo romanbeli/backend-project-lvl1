@@ -15,3 +15,12 @@ brain-prime:
 
 brain-progression:
 [![asciicast](https://asciinema.org/a/rjFOA5i5dycJ4MvwZhe64y6kq.svg)](https://asciinema.org/a/rjFOA5i5dycJ4MvwZhe64y6kq)
+
+This application provide chance to play in a set of console arithmetic games. For installation the app you should make command "npm link" in a root directory of the app.
+The set of game include five different games:
+1. brain-calc
+2. brain-even
+3. brain-gcd
+4. brain-prime
+5. brain-progression
+For starting one of this games just make command according a game name

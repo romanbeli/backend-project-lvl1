@@ -1,6 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const getInfoFromUser = (frase) => readlineSync.question(`${frase}`);
+const getInfoFromUser = (phrase) => readlineSync.question(phrase);
+
+const numOfRounds = 3;
 
 export default (rounds, gameInstruction) => {
   console.log('Welcome to the Brain Games!');
@@ -25,4 +27,4 @@ export default (rounds, gameInstruction) => {
   console.log(`Congratulations, ${name}!`);
 };
 
-export { getInfoFromUser };
+export { getInfoFromUser, numOfRounds };

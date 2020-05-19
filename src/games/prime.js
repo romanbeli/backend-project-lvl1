@@ -1,10 +1,9 @@
-import executeGame from '../index.js';
+import executeGame, { numOfRounds } from '../index.js';
 import { generateNum } from '../utils.js';
 
 const gameInstruction = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
-  if (num === 1) return true;
   for (let divisor = Math.floor(num / 2); divisor > 0; divisor -= 1) {
     const divisionResult = num % divisor;
 
@@ -16,12 +15,12 @@ const isPrime = (num) => {
 };
 
 const generateRounds = () => {
-  const min = 1;
+  const min = 2;
   const max = 22;
 
   const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numOfRounds; i += 1) {
     const question = generateNum(min, max);
 
     const correctAnswer = isPrime(question) ? 'yes' : 'no';

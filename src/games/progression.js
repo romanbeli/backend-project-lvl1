@@ -1,4 +1,4 @@
-import executeGame from '../index.js';
+import executeGame, { numOfRounds } from '../index.js';
 import { generateNum } from '../utils.js';
 
 const gameInstruction = 'What number is missing in the progression?';
@@ -24,7 +24,7 @@ const generateQuestion = (progression, hiddenIndex) => {
 const generateRounds = () => {
   const rounds = [];
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numOfRounds; i += 1) {
     const min = 0;
     const maxFirstElemOfProgression = 9;
     const maxIndexOfProgresson = progressionLength - 1;
@@ -32,11 +32,11 @@ const generateRounds = () => {
 
     const firstElem = generateNum(min, maxFirstElemOfProgression);
     const step = generateNum(min, maxStepOfProgeression);
-    const hiddenIndex = generateNum(min, maxIndexOfProgresson);
+    const hiddenElementIndex = generateNum(min, maxIndexOfProgresson);
     const progression = generateProgression(firstElem, step);
 
-    const correctAnswer = String(progression[hiddenIndex]);
-    const question = generateQuestion(progression, hiddenIndex);
+    const correctAnswer = String(progression[hiddenElementIndex]);
+    const question = generateQuestion(progression, hiddenElementIndex);
 
     rounds.push([correctAnswer, question]);
   }
