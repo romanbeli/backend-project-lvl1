@@ -32,7 +32,7 @@ const generateRounds = () => {
 
     const firstElem = generateNum(min, maxFirstElemOfProgression);
     const step = generateNum(min, maxStepOfProgeression);
-    const hiddenElementIndex = generateNum(min, maxIndexOfProgresson);
+    const hiddenElementIndex = generateNum(0, maxIndexOfProgresson);
     const progression = generateProgression(firstElem, step);
 
     const correctAnswer = String(progression[hiddenElementIndex]);

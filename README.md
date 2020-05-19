@@ -23,4 +23,5 @@ The set of game include five different games:
 3. brain-gcd
 4. brain-prime
 5. brain-progression
-For starting one of this games just make command according a game name
+
+For starting one of this games just make command according with a game name
